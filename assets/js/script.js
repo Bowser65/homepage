@@ -190,8 +190,6 @@ window.onload = function() {
       if (items.links.length > 2) {
         var screenH = document.getElementById('js-bg').getBoundingClientRect().height - 65
         var links = items.links.split('\n').slice(0, Math.floor((window.innerHeight - 65) / 40))
-        console.log(links.length * 52)
-        console.log(screenH)
         if (links.length * 52 > screenH) {
           document.getElementById('quicklinks').classList.add('compact')
         }
