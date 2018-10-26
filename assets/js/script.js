@@ -210,7 +210,7 @@ window.onload = function() {
                 link.setAttribute('href', lnk)
 
                 img.classList.add('quicklink-icon')
-                img.setAttribute('src', 'https://cdn.bowser65.tk/favicon/' + lnk + '/i.png')
+                img.setAttribute('src', 'https://cdn.bowser65.xyz/favicon/' + lnk + '/i.png')
 
                 txt.classList.add('quicklink-txt')
                 txt.innerText = lnk
