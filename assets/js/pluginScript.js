@@ -107,7 +107,7 @@ document.addEventListener('DOMContentLoaded', function() {
     if (items.custombg.length) {
       var chooseranbg = items.custombg.split("\n");
       var chooseranbgindex = Math.floor(Math.random() * chooseranbg.length);
-      backgroundElement.src = chooseranbg[chooseranbgindex];
+      backgroundElement.style.backgroundImage = 'url(\'' + chooseranbg[chooseranbgindex] + '\')';
     }
 
     if (items.language) { moment.locale(items.language); }
