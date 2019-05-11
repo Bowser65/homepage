@@ -186,7 +186,7 @@ document.addEventListener('DOMContentLoaded', function() {
       for (var i = 0; i < links.length; i++) {
         (function (lnk) {
           if (lnk.length) {
-            setTimeout(function () {
+            setTimeout(async function () {
               var link = document.createElement('a')
               var img = document.createElement('img')
               var txt = document.createElement('span')
@@ -199,7 +199,7 @@ document.addEventListener('DOMContentLoaded', function() {
               link.setAttribute('href', lnk)
 
               img.classList.add('quicklink-icon')
-              img.setAttribute('src', 'https://cdn.bowser65.xyz/favicon/' + lnk + '/i.png')
+              img.setAttribute('src', 'https://cdn.bowser65.xyz/i/web.png')
 
               txt.classList.add('quicklink-txt')
               txt.innerText = lnk
@@ -207,6 +207,12 @@ document.addEventListener('DOMContentLoaded', function() {
               link.appendChild(img)
               link.appendChild(txt)
               document.getElementById('quicklinks').appendChild(link)
+
+              const resp = await fetch(`https://api.bowser65.xyz/favicon/${encodeURIComponent(lnk)}`)
+              const json = await resp.json()
+              if (json.icon) {
+                img.setAttribute('src', json.icon)
+              }
             }, i * 200)
           }
         })(links[i])
